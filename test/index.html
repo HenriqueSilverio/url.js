@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Test Runner</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+    <!-- Required for browser reporter -->
+    <div id="mocha"></div>
+
+
+    <!-- Testing libraries -->
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+
+
+    <!-- Testing libraries setup -->
+    <script>
+        mocha.setup('bdd');
+        expect = chai.expect;
+    </script>
+
+
+    <!-- Source files to test -->
+    <script src="../src/url.js"></script>
+
+
+    <!-- Spec files -->
+    <script src="unit/url.spec.js"></script>
+
+
+    <!-- Run mocha -->
+    <script>
+        if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+            mocha.run();
+        }
+    </script>
+</body>
+</html>
